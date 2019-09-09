@@ -4,7 +4,7 @@
 
 # Lab
 
-Using this project as your base, add the following two VCs
+Using this project as your base, add the following two VCs.  Note: the project will not compile because it does not have a `Secrets.swift`.  Add one with your own secrets.
 
 ## 1. Clients list
 

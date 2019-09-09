@@ -29,7 +29,7 @@ class NetworkHelper {
                     return
                 }
 
-                guard let response = response as? HTTPURLResponse, response.statusCode >= 200, response.statusCode <= 299 else {
+                guard let response = response as? HTTPURLResponse, (200...299) ~= response.statusCode else {
                     completionHandler(.failure(.badStatusCode))
                     return
                 }

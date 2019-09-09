@@ -9,10 +9,12 @@ class NetworkHelper {
     static let manager = NetworkHelper()
     
     func performDataTask(withUrl url: URL,
+                         andHTTPBody body: Data? = nil,
                          andMethod httpMethod: HTTPMethod,
                          completionHandler: @escaping ((Result<Data, AppError>) -> Void)) {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
+        request.httpBody = body
         
         urlSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {

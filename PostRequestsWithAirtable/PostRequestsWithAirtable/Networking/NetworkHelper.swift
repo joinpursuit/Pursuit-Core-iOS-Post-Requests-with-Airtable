@@ -6,7 +6,12 @@ enum HTTPMethod: String {
 }
 
 class NetworkHelper {
+    
+    // MARK: - Static Properties
+    
     static let manager = NetworkHelper()
+    
+    // MARK: - Internal Properties
     
     func performDataTask(withUrl url: URL,
                          andHTTPBody body: Data? = nil,
@@ -23,10 +28,7 @@ class NetworkHelper {
                     completionHandler(.failure(.noDataReceived))
                     return
                 }
-                print("STATUS CODE")
-                print((response as? HTTPURLResponse)?.statusCode)
-                print("RESPONSE")
-                print(String(data: data, encoding: .utf8)!)
+
                 guard let response = response as? HTTPURLResponse, response.statusCode >= 200, response.statusCode <= 299 else {
                     completionHandler(.failure(.badStatusCode))
                     return
@@ -47,7 +49,9 @@ class NetworkHelper {
             }.resume()
     }
     
-    private init() {}
+    // MARK: - Private Properties and Initializers
     
     private let urlSession = URLSession(configuration: URLSessionConfiguration.default)
+    
+    private init() {}
 }

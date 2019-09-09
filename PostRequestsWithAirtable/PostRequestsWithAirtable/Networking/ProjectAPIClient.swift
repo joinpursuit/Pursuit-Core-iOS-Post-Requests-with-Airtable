@@ -4,7 +4,7 @@ struct ProjectAPIClient {
     static let manager = ProjectAPIClient()
     
     func getProjects(completionHandler: @escaping (Result<[Project], AppError>) -> Void) {
-        NetworkHelper.manager.getData(from: airtableURL) { result in
+        NetworkHelper.manager.performDataTask(withUrl: airtableURL, andMethod: .get) { result in
             switch result {
             case let .failure(error):
                 completionHandler(.failure(error))

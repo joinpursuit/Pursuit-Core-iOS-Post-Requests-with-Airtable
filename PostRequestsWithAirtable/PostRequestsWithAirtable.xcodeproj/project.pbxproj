@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD01CDB42326B70F002D0255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDB32326B70F002D0255 /* AppDelegate.swift */; };
+		CD01CDB62326B70F002D0255 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */; };
+		CD01CDB92326B70F002D0255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CDB72326B70F002D0255 /* Main.storyboard */; };
+		CD01CDBB2326B711002D0255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD01CDBA2326B711002D0255 /* Assets.xcassets */; };
+		CD01CDBE2326B711002D0255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CDBC2326B711002D0255 /* LaunchScreen.storyboard */; };
+		CD01CDC92326B711002D0255 /* PostRequestsWithAirtableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDC82326B711002D0255 /* PostRequestsWithAirtableTests.swift */; };
+		CD01CDD42326B819002D0255 /* AirtableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDD32326B819002D0255 /* AirtableResponse.swift */; };
+		CD01CDD62326B84A002D0255 /* ProjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDD52326B84A002D0255 /* ProjectWrapper.swift */; };
+		CD01CDD82326B8C5002D0255 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDD72326B8C5002D0255 /* Project.swift */; };
+		CDEB5DF12326BC8200DE505F /* AirtableSampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CDEB5DF02326BC8200DE505F /* AirtableSampleResponse.json */; };
+		CDEB5DF32326C5E100DE505F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DF22326C5E100DE505F /* NetworkHelper.swift */; };
+		CDEB5DF62326C62200DE505F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DF52326C62200DE505F /* AppError.swift */; };
+		CDEB5DF82326C67200DE505F /* ProjectAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DF72326C67200DE505F /* ProjectAPIClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD01CDC52326B711002D0255 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD01CDA82326B70F002D0255 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD01CDAF2326B70F002D0255;
+			remoteInfo = PostRequestsWithAirtable;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD01CDB02326B70F002D0255 /* PostRequestsWithAirtable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostRequestsWithAirtable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD01CDB32326B70F002D0255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		CD01CDB82326B70F002D0255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD01CDBA2326B711002D0255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD01CDBD2326B711002D0255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD01CDBF2326B711002D0255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD01CDC42326B711002D0255 /* PostRequestsWithAirtableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostRequestsWithAirtableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD01CDC82326B711002D0255 /* PostRequestsWithAirtableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestsWithAirtableTests.swift; sourceTree = "<group>"; };
+		CD01CDCA2326B711002D0255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD01CDD32326B819002D0255 /* AirtableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirtableResponse.swift; sourceTree = "<group>"; };
+		CD01CDD52326B84A002D0255 /* ProjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectWrapper.swift; sourceTree = "<group>"; };
+		CD01CDD72326B8C5002D0255 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		CDEB5DF02326BC8200DE505F /* AirtableSampleResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AirtableSampleResponse.json; sourceTree = "<group>"; };
+		CDEB5DF22326C5E100DE505F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		CDEB5DF52326C62200DE505F /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		CDEB5DF72326C67200DE505F /* ProjectAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPIClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD01CDAD2326B70F002D0255 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD01CDC12326B711002D0255 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD01CDA72326B70F002D0255 = {
+			isa = PBXGroup;
+			children = (
+				CDEB5DF02326BC8200DE505F /* AirtableSampleResponse.json */,
+				CD01CDB22326B70F002D0255 /* PostRequestsWithAirtable */,
+				CD01CDC72326B711002D0255 /* PostRequestsWithAirtableTests */,
+				CD01CDB12326B70F002D0255 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD01CDB12326B70F002D0255 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CDB02326B70F002D0255 /* PostRequestsWithAirtable.app */,
+				CD01CDC42326B711002D0255 /* PostRequestsWithAirtableTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD01CDB22326B70F002D0255 /* PostRequestsWithAirtable */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CDD92326B9A0002D0255 /* Supporting Files */,
+				CDEB5DF42326C5EA00DE505F /* Networking */,
+				CD01CDDB2326BA0A002D0255 /* View Controllers */,
+				CD01CDDA2326B9E5002D0255 /* Airtable Model Structs */,
+				CD01CDB72326B70F002D0255 /* Main.storyboard */,
+				CD01CDBC2326B711002D0255 /* LaunchScreen.storyboard */,
+				CD01CDBF2326B711002D0255 /* Info.plist */,
+			);
+			path = PostRequestsWithAirtable;
+			sourceTree = "<group>";
+		};
+		CD01CDC72326B711002D0255 /* PostRequestsWithAirtableTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CDC82326B711002D0255 /* PostRequestsWithAirtableTests.swift */,
+				CD01CDCA2326B711002D0255 /* Info.plist */,
+			);
+			path = PostRequestsWithAirtableTests;
+			sourceTree = "<group>";
+		};
+		CD01CDD92326B9A0002D0255 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CDB32326B70F002D0255 /* AppDelegate.swift */,
+				CD01CDBA2326B711002D0255 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD01CDDA2326B9E5002D0255 /* Airtable Model Structs */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CDD32326B819002D0255 /* AirtableResponse.swift */,
+				CD01CDD52326B84A002D0255 /* ProjectWrapper.swift */,
+				CD01CDD72326B8C5002D0255 /* Project.swift */,
+			);
+			path = "Airtable Model Structs";
+			sourceTree = "<group>";
+		};
+		CD01CDDB2326BA0A002D0255 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CDEB5DF42326C5EA00DE505F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CDEB5DF22326C5E100DE505F /* NetworkHelper.swift */,
+				CDEB5DF72326C67200DE505F /* ProjectAPIClient.swift */,
+				CDEB5DF52326C62200DE505F /* AppError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD01CDAF2326B70F002D0255 /* PostRequestsWithAirtable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD01CDCD2326B711002D0255 /* Build configuration list for PBXNativeTarget "PostRequestsWithAirtable" */;
+			buildPhases = (
+				CD01CDAC2326B70F002D0255 /* Sources */,
+				CD01CDAD2326B70F002D0255 /* Frameworks */,
+				CD01CDAE2326B70F002D0255 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PostRequestsWithAirtable;
+			productName = PostRequestsWithAirtable;
+			productReference = CD01CDB02326B70F002D0255 /* PostRequestsWithAirtable.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD01CDC32326B711002D0255 /* PostRequestsWithAirtableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD01CDD02326B711002D0255 /* Build configuration list for PBXNativeTarget "PostRequestsWithAirtableTests" */;
+			buildPhases = (
+				CD01CDC02326B711002D0255 /* Sources */,
+				CD01CDC12326B711002D0255 /* Frameworks */,
+				CD01CDC22326B711002D0255 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD01CDC62326B711002D0255 /* PBXTargetDependency */,
+			);
+			name = PostRequestsWithAirtableTests;
+			productName = PostRequestsWithAirtableTests;
+			productReference = CD01CDC42326B711002D0255 /* PostRequestsWithAirtableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD01CDA82326B70F002D0255 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Benjamin Stone";
+				TargetAttributes = {
+					CD01CDAF2326B70F002D0255 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					CD01CDC32326B711002D0255 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CD01CDAF2326B70F002D0255;
+					};
+				};
+			};
+			buildConfigurationList = CD01CDAB2326B70F002D0255 /* Build configuration list for PBXProject "PostRequestsWithAirtable" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD01CDA72326B70F002D0255;
+			productRefGroup = CD01CDB12326B70F002D0255 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD01CDAF2326B70F002D0255 /* PostRequestsWithAirtable */,
+				CD01CDC32326B711002D0255 /* PostRequestsWithAirtableTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD01CDAE2326B70F002D0255 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDEB5DF12326BC8200DE505F /* AirtableSampleResponse.json in Resources */,
+				CD01CDBE2326B711002D0255 /* LaunchScreen.storyboard in Resources */,
+				CD01CDBB2326B711002D0255 /* Assets.xcassets in Resources */,
+				CD01CDB92326B70F002D0255 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD01CDC22326B711002D0255 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD01CDAC2326B70F002D0255 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD01CDD82326B8C5002D0255 /* Project.swift in Sources */,
+				CDEB5DF82326C67200DE505F /* ProjectAPIClient.swift in Sources */,
+				CD01CDB62326B70F002D0255 /* ProjectsViewController.swift in Sources */,
+				CD01CDB42326B70F002D0255 /* AppDelegate.swift in Sources */,
+				CD01CDD62326B84A002D0255 /* ProjectWrapper.swift in Sources */,
+				CDEB5DF32326C5E100DE505F /* NetworkHelper.swift in Sources */,
+				CD01CDD42326B819002D0255 /* AirtableResponse.swift in Sources */,
+				CDEB5DF62326C62200DE505F /* AppError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD01CDC02326B711002D0255 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD01CDC92326B711002D0255 /* PostRequestsWithAirtableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD01CDC62326B711002D0255 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD01CDAF2326B70F002D0255 /* PostRequestsWithAirtable */;
+			targetProxy = CD01CDC52326B711002D0255 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD01CDB72326B70F002D0255 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD01CDB82326B70F002D0255 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD01CDBC2326B711002D0255 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD01CDBD2326B711002D0255 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD01CDCB2326B711002D0255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD01CDCC2326B711002D0255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD01CDCE2326B711002D0255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostRequestsWithAirtable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pursuit.PostRequestsWithAirtable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD01CDCF2326B711002D0255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostRequestsWithAirtable/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pursuit.PostRequestsWithAirtable;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD01CDD12326B711002D0255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostRequestsWithAirtableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pursuit.PostRequestsWithAirtableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostRequestsWithAirtable.app/PostRequestsWithAirtable";
+			};
+			name = Debug;
+		};
+		CD01CDD22326B711002D0255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PostRequestsWithAirtableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pursuit.PostRequestsWithAirtableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostRequestsWithAirtable.app/PostRequestsWithAirtable";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD01CDAB2326B70F002D0255 /* Build configuration list for PBXProject "PostRequestsWithAirtable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD01CDCB2326B711002D0255 /* Debug */,
+				CD01CDCC2326B711002D0255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD01CDCD2326B711002D0255 /* Build configuration list for PBXNativeTarget "PostRequestsWithAirtable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD01CDCE2326B711002D0255 /* Debug */,
+				CD01CDCF2326B711002D0255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD01CDD02326B711002D0255 /* Build configuration list for PBXNativeTarget "PostRequestsWithAirtableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD01CDD12326B711002D0255 /* Debug */,
+				CD01CDD22326B711002D0255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD01CDA82326B70F002D0255 /* Project object */;
+}

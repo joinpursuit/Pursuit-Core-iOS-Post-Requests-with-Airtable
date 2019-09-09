@@ -29,7 +29,24 @@ class ProjectsViewController: UIViewController {
         projectsTableView.dataSource = self
     }
     
-    private func loadData() {}
+    private func loadData() {
+        ProjectAPIClient.manager.getProjects { result in
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case let .success(projects):
+                    self?.projects = projects
+                case let .failure(error):
+                    self?.displayErrorAlert(with: error)
+                }
+            }
+        }
+    }
+    
+    private func displayErrorAlert(with error: AppError) {
+        let alertVC = UIAlertController(title: "Error Fetching Data", message: "\(error)", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
 }
 
 extension ProjectsViewController: UITableViewDelegate {}

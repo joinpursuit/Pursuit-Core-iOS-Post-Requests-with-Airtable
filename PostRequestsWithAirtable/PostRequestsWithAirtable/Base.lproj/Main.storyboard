@@ -60,8 +60,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="T7Y-Zi-I4B">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="WKy-FX-fnH">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="KdT-Wq-xfo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="KdT-Wq-xfo">
+                                <rect key="frame" x="12" y="11" width="382" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="QAU-Er-fid" kind="show" id="FMa-bk-6Dp"/>

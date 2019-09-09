@@ -15,6 +15,7 @@ class NetworkHelper {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         request.httpBody = body
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         urlSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
@@ -22,6 +23,10 @@ class NetworkHelper {
                     completionHandler(.failure(.noDataReceived))
                     return
                 }
+                print("STATUS CODE")
+                print((response as? HTTPURLResponse)?.statusCode)
+                print("RESPONSE")
+                print(String(data: data, encoding: .utf8)!)
                 guard let response = response as? HTTPURLResponse, response.statusCode >= 200, response.statusCode <= 299 else {
                     completionHandler(.failure(.badStatusCode))
                     return

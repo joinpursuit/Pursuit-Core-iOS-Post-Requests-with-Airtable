@@ -21,6 +21,7 @@
 		CDEB5DF62326C62200DE505F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DF52326C62200DE505F /* AppError.swift */; };
 		CDEB5DF82326C67200DE505F /* ProjectAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DF72326C67200DE505F /* ProjectAPIClient.swift */; };
 		CDEB5DFD2326C78800DE505F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DFC2326C78800DE505F /* Secrets.swift */; };
+		CDEB5DFF2326DCB900DE505F /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEB5DFE2326DCB900DE505F /* CreateProjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CDEB5DF52326C62200DE505F /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		CDEB5DF72326C67200DE505F /* ProjectAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPIClient.swift; sourceTree = "<group>"; };
 		CDEB5DFC2326C78800DE505F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		CDEB5DFE2326DCB900DE505F /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */,
+				CDEB5DFE2326DCB900DE505F /* CreateProjectViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				CD01CDD82326B8C5002D0255 /* Project.swift in Sources */,
 				CDEB5DFD2326C78800DE505F /* Secrets.swift in Sources */,
+				CDEB5DFF2326DCB900DE505F /* CreateProjectViewController.swift in Sources */,
 				CDEB5DF82326C67200DE505F /* ProjectAPIClient.swift in Sources */,
 				CD01CDB62326B70F002D0255 /* ProjectsViewController.swift in Sources */,
 				CD01CDB42326B70F002D0255 /* AppDelegate.swift in Sources */,

@@ -21,8 +21,27 @@ struct ProjectAPIClient {
         }
     }
     
+    func post(_ project: Project, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+        let projectWrapper = ProjectWrapper(project: project)
+        guard let encodedProjectWrapper = try? JSONEncoder().encode(projectWrapper) else {
+            fatalError("Unable to json encode project")
+        }
+        print(String(data: encodedProjectWrapper, encoding: .utf8)!)
+        NetworkHelper.manager.performDataTask(withUrl: airtableURL,
+                                              andHTTPBody: encodedProjectWrapper,
+                                              andMethod: .post,
+                                              completionHandler: { result in
+                                                switch result {
+                                                case let .success(data):
+                                                    completionHandler(.success(data))
+                                                case let .failure(error):
+                                                    completionHandler(.failure(error))
+                                                }
+        })
+    }
+    
     private var airtableURL: URL {
-        guard let url = URL(string: "https://api.airtable.com/v0/appIBfoNbzEaA72c2/Design%20projects?api_key=" + Secrets.AirtableAPIKey) else {
+        guard let url = URL(string: "https://api.airtable.com/v0/appIBfoNbzEaA72c2/Design%20projects?typecast=true&&api_key=" + Secrets.AirtableAPIKey) else {
             fatalError("Error: Invalid URL")
         }
         return url

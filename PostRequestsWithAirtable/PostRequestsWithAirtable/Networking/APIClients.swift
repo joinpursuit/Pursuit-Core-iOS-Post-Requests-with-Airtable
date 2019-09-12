@@ -56,3 +56,46 @@ struct ProjectAPIClient {
     
     private init() {}
 }
+
+
+struct ClientsAPIClient {
+    
+    // MARK: - Static Properties
+    
+    static let manager = ClientsAPIClient()
+    
+    // MARK: - Internal Methods
+    
+    func getProjects(completionHandler: @escaping (Result<[Clients], AppError>) -> Void) {
+        NetworkHelper.manager.performDataTask(withUrl: airtableURL, andMethod: .get) { result in
+            switch result {
+            case let .failure(error):
+                completionHandler(.failure(error))
+                return
+            case let .success(data):
+                do {
+                    let projects = try Clients.getClients(from: data)
+                    completionHandler(.success(projects))
+                }
+                catch {
+                    completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+                }
+            }
+        }
+    }
+    
+    
+    
+    // MARK: - Private Properties and Initializers
+    
+    private var airtableURL: URL {
+        guard let url = URL(string: "https://api.airtable.com/v0/" + Secrets.AirtableProject + "/Clients?view=All%20clients&api_key=" + Secrets.AirtableAPIKey)
+        else {
+            fatalError("Error: Invalid URL")
+        }
+        return url
+    }
+    
+    private init() {}
+    
+}

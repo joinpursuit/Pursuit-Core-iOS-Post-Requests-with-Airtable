@@ -66,7 +66,7 @@ struct ClientsAPIClient {
     
     // MARK: - Internal Methods
     
-    func getProjects(completionHandler: @escaping (Result<[Clients], AppError>) -> Void) {
+    func getClients(completionHandler: @escaping (Result<[Clients], AppError>) -> Void) {
         NetworkHelper.manager.performDataTask(withUrl: airtableURL, andMethod: .get) { result in
             switch result {
             case let .failure(error):
@@ -74,7 +74,7 @@ struct ClientsAPIClient {
                 return
             case let .success(data):
                 do {
-                    let projects = try Clients.getClients(from: data)
+                    let projects = try ClientWrapper.getClients(from: data)
                     completionHandler(.success(projects))
                 }
                 catch {

@@ -8,20 +8,37 @@
 
 import Foundation
 
-struct Clients: Codable {
+
+struct  ClientWrapper: Codable {
+    let records: [Clients]
     
     static func getClients(from jsonData: Data) throws -> [Clients] {
-        let response = try JSONDecoder().decode([Clients].self, from: jsonData)
-        return response
+        let response = try JSONDecoder().decode(ClientWrapper.self, from: jsonData)
+        return response.records
     }
+}
+
+struct Clients: Codable {
+    let fields: Fields
+    
+}
+
+
+struct Fields: Codable {
     
     let about: String?
     let name: String?
+    let logo: [LogoWrapper]
     
     enum CodingKeys: String, CodingKey {
         case about = "About"
         case name = "Name"
+        case logo = "Logo"
     }
 }
 
+
+struct LogoWrapper: Codable {
+    let url: String?
+}
 

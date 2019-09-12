@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClientsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClientsViewController: UIViewController, UITableViewDelegate {
     
     
     
@@ -19,19 +19,41 @@ class ClientsViewController: UIViewController, UITableViewDelegate, UITableViewD
             clientsTableView.reloadData()
         }
     }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
 
     
+    private func loadData() {
+        ClientsAPIClient.manager.getClients { result in
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case let .success(data):
+                    self?.clients = data
+                case let .failure(error):
+                    self?.displayErrorAlert(with: error)
+                }
+            }
+        }
+    }
+    
+    private func displayErrorAlert(with error: AppError) {
+        let alertVC = UIAlertController(title: "Error Fetching Data", message: "\(error)", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
+
+    private func configureTableView() {
+       clientsTableView.delegate = self
+       clientsTableView.dataSource = self
+    }
+    
+    
     override func viewDidLoad() {
+        configureTableView()
         super.viewDidLoad()
 
     
@@ -39,4 +61,21 @@ class ClientsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 
 
+}
+
+
+
+extension ClientsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return clients.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let client = clients[indexPath.row].fields
+        let cell = tableView.dequeueReusableCell(withIdentifier: "clientCell", for: indexPath)
+        cell.textLabel?.text = client.name
+        cell.detailTextLabel?.text = client.about
+        return cell
+    }
+    
 }

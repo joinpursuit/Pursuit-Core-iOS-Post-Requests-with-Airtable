@@ -6,8 +6,8 @@ struct Project: Codable {
         return response.projectWrappers.map { $0.project }
     }
     
-    let dueDate: String
-    let name: String
+    let dueDate: String?
+    let name: String?
     
     enum CodingKeys: String, CodingKey {
         case dueDate = "Due date"

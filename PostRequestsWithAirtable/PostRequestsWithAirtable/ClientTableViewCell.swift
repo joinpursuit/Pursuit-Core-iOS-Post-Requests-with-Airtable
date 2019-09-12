@@ -10,6 +10,15 @@ import UIKit
 
 class ClientTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var logoView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
+    @IBOutlet weak var aboutLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

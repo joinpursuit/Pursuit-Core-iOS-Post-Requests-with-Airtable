@@ -72,10 +72,24 @@ extension ClientsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let client = clients[indexPath.row].fields
-        let cell = tableView.dequeueReusableCell(withIdentifier: "clientCell", for: indexPath)
-        cell.textLabel?.text = client.name
-        cell.detailTextLabel?.text = client.about
+        let cell = tableView.dequeueReusableCell(withIdentifier: "clientCell", for: indexPath) as! ClientTableViewCell
+        cell.nameLabel.text = client.name
+        cell.aboutLabel.text = client.about
+        ImageHelper.shared.fetchImage(urlString: client.logo[0].url ?? "") { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                    cell.logoView.image = image
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
 }

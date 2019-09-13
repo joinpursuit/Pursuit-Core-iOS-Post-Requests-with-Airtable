@@ -188,15 +188,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-rq-kqk">
-                                <rect key="frame" x="192" y="519" width="31" height="30"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Uy3-ae-gp0">
+                                <rect key="frame" x="197" y="529" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Post"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-rq-kqk">
+                                <rect key="frame" x="184" y="517" width="51" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Post!"/>
+                                <connections>
+                                    <action selector="postNewClient:" destination="0P0-wL-mQt" eventType="touchUpInside" id="sDP-Qo-GVw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="R4T-lV-2Sa"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutTextField" destination="pvx-k4-EOC" id="lZn-El-pyP"/>
+                        <outlet property="nameTextField" destination="BQA-tA-2AJ" id="Fs8-Mg-zfX"/>
+                        <outlet property="postButton" destination="3nh-rq-kqk" id="vij-WY-ze0"/>
+                        <outlet property="spinner" destination="Uy3-ae-gp0" id="0Ky-Z7-yu7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqa-VE-rKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

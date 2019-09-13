@@ -71,13 +71,15 @@ extension ClientsViewController: UITableViewDataSource {
         
         cell.nameLabel.text = client.name
         
-        ImageHelper.shared.getImage(urlStr: client.logo[0].thumbnails.large.url) { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .failure(let error):
-                    print(error)
-                case .success(let imageFromOnline):
-                    cell.logoImage.image = imageFromOnline
+        if let clientImage = client.logo {
+            ImageHelper.shared.getImage(urlStr: clientImage[0].thumbnails.large.url) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let imageFromOnline):
+                        cell.logoImage.image = imageFromOnline
+                    }
                 }
             }
         }

@@ -16,7 +16,7 @@ struct Client: Codable {
     
     let name: String
     let about: String
-    let logo: [Logo]
+    let logo: [Logo]?
     
     enum CodingKeys: String, CodingKey {
         case name = "Name"

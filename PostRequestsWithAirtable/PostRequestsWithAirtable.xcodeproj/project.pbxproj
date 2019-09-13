@@ -17,6 +17,8 @@
 		287E4038232B25F400C2A26D /* ClientWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4033232AF57C00C2A26D /* ClientWrapper.swift */; };
 		287E403A232B269600C2A26D /* AirtableClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4039232B269600C2A26D /* AirtableClientResponse.swift */; };
 		287E403B232B272A00C2A26D /* AirtableClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4039232B269600C2A26D /* AirtableClientResponse.swift */; };
+		287E403D232B372A00C2A26D /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E403C232B372900C2A26D /* ClientTableViewCell.swift */; };
+		287E403F232B386300C2A26D /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E403E232B386300C2A26D /* ImageHelper.swift */; };
 		CD01CDB42326B70F002D0255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDB32326B70F002D0255 /* AppDelegate.swift */; };
 		CD01CDB62326B70F002D0255 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */; };
 		CD01CDB92326B70F002D0255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CDB72326B70F002D0255 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		287E4033232AF57C00C2A26D /* ClientWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientWrapper.swift; sourceTree = "<group>"; };
 		287E4035232AF7E700C2A26D /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		287E4039232B269600C2A26D /* AirtableClientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirtableClientResponse.swift; sourceTree = "<group>"; };
+		287E403C232B372900C2A26D /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
+		287E403E232B386300C2A26D /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		CD01CDB02326B70F002D0255 /* PostRequestsWithAirtable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostRequestsWithAirtable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD01CDB32326B70F002D0255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				CDEB5DF02326BC8200DE505F /* AirtableSampleResponse.json */,
+				287E403C232B372900C2A26D /* ClientTableViewCell.swift */,
 				CD01CDB22326B70F002D0255 /* PostRequestsWithAirtable */,
 				CD01CDC72326B711002D0255 /* PostRequestsWithAirtableTests */,
 				CD01CDB12326B70F002D0255 /* Products */,
@@ -172,6 +177,7 @@
 				CDEB5DF72326C67200DE505F /* ProjectAPIClient.swift */,
 				287E4031232AEEAD00C2A26D /* ClientAPI.swift */,
 				CDEB5DF52326C62200DE505F /* AppError.swift */,
+				287E403E232B386300C2A26D /* ImageHelper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -296,6 +302,8 @@
 				CD01CDB42326B70F002D0255 /* AppDelegate.swift in Sources */,
 				287E4030232AEDCD00C2A26D /* CreateClientViewController.swift in Sources */,
 				287E4036232AF7E700C2A26D /* Client.swift in Sources */,
+				287E403D232B372A00C2A26D /* ClientTableViewCell.swift in Sources */,
+				287E403F232B386300C2A26D /* ImageHelper.swift in Sources */,
 				CD01CDD62326B84A002D0255 /* ProjectWrapper.swift in Sources */,
 				287E402E232AEDA200C2A26D /* ClientsViewController.swift in Sources */,
 				CDEB5DF32326C5E100DE505F /* NetworkHelper.swift in Sources */,

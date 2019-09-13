@@ -56,9 +56,11 @@ struct ClientAPI {
     // MARK: - Private Properties and Initializers
     
     private var clientURL: URL {
-        guard let url = URL(string: " https://api.airtable.com/v0/" + Secrets.AirtableProject + "/Clients?maxRecords=3&view=All%20clients&api_key=" + Secrets.AirtableAPIKey) else {
+        guard let url =
+            URL(string: "https://api.airtable.com/v0/" + Secrets.AirtableProject + "/Clients?maxRecords=3&view=All%20clients&api_key=" + Secrets.AirtableAPIKey) else {
             fatalError("Error: Invalid URL")
         }
+        
         
         return url
     }

@@ -16,15 +16,23 @@ struct Client: Codable {
     
     let name: String
     let about: String
-    let logo: Logo
+    let logo: [Logo]
     
     enum CodingKeys: String, CodingKey {
         case name = "Name"
         case about = "About"
-        case logo
+        case logo = "Logo"
     }
 }
 
 struct Logo: Codable {
-    let large: String
+    let thumbnails: Thumbnails
+}
+
+struct Thumbnails: Codable {
+    let large: Large
+}
+
+struct Large: Codable {
+    let url: String
 }

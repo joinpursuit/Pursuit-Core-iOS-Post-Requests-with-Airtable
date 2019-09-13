@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6111CC232BD0DD001F31FE /* CreateClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6111CB232BD0DD001F31FE /* CreateClientViewController.swift */; };
 		3A95F553232AE72000D0EDE1 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95F552232AE72000D0EDE1 /* Secrets.swift */; };
 		3A95F555232AE7EC00D0EDE1 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95F554232AE7EC00D0EDE1 /* ClientsViewController.swift */; };
 		3A95F557232AE87600D0EDE1 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A95F556232AE87600D0EDE1 /* ClientTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A6111CB232BD0DD001F31FE /* CreateClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientViewController.swift; sourceTree = "<group>"; };
 		3A95F552232AE72000D0EDE1 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		3A95F554232AE7EC00D0EDE1 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
 		3A95F556232AE87600D0EDE1 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,8 +112,6 @@
 				CD01CDDB2326BA0A002D0255 /* View Controllers */,
 				CD01CDDA2326B9E5002D0255 /* Airtable Model Structs */,
 				CD01CDB72326B70F002D0255 /* Main.storyboard */,
-				3A95F556232AE87600D0EDE1 /* ClientTableViewCell.swift */,
-				3A95F554232AE7EC00D0EDE1 /* ClientsViewController.swift */,
 				CD01CDBC2326B711002D0255 /* LaunchScreen.storyboard */,
 				CD01CDBF2326B711002D0255 /* Info.plist */,
 			);
@@ -152,6 +152,9 @@
 			children = (
 				CD01CDB52326B70F002D0255 /* ProjectsViewController.swift */,
 				CDEB5DFE2326DCB900DE505F /* CreateProjectViewController.swift */,
+				3A6111CB232BD0DD001F31FE /* CreateClientViewController.swift */,
+				3A95F554232AE7EC00D0EDE1 /* ClientsViewController.swift */,
+				3A95F556232AE87600D0EDE1 /* ClientTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				CD01CDB62326B70F002D0255 /* ProjectsViewController.swift in Sources */,
 				CD01CDB42326B70F002D0255 /* AppDelegate.swift in Sources */,
 				CD01CDD62326B84A002D0255 /* ProjectWrapper.swift in Sources */,
+				3A6111CC232BD0DD001F31FE /* CreateClientViewController.swift in Sources */,
 				3A95F55B232AF57E00D0EDE1 /* ImageManager.swift in Sources */,
 				3A95F555232AE7EC00D0EDE1 /* ClientsViewController.swift in Sources */,
 				CDEB5DF32326C5E100DE505F /* NetworkHelper.swift in Sources */,

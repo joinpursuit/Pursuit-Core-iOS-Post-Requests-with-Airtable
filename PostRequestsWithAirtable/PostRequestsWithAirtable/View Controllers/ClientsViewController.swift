@@ -75,7 +75,7 @@ extension ClientsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "clientCell", for: indexPath) as! ClientTableViewCell
         cell.nameLabel.text = client.name
         cell.aboutLabel.text = client.about
-        ImageHelper.shared.fetchImage(urlString: client.logo[0].url ?? "") { (result) in
+        ImageHelper.shared.fetchImage(urlString: client.logo?[0].url ?? "") { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):

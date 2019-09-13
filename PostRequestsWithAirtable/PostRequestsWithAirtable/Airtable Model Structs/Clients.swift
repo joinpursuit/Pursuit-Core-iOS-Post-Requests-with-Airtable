@@ -28,7 +28,7 @@ struct Fields: Codable {
     
     let about: String?
     let name: String?
-    let logo: [LogoWrapper]
+    let logo: [LogoWrapper]?
     
     enum CodingKeys: String, CodingKey {
         case about = "About"

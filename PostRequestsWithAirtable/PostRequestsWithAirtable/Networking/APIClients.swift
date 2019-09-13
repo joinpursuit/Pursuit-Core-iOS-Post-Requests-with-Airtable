@@ -84,6 +84,24 @@ struct ClientsAPIClient {
         }
     }
     
+    func post(_ client: Clients , completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+        guard let encodedClientWrapper = try? JSONEncoder().encode(client) else {
+            fatalError("Unable to json encode project")
+        }
+        print(String(data: encodedClientWrapper, encoding: .utf8)!)
+        NetworkHelper.manager.performDataTask(withUrl: airtableURL,
+                                              andHTTPBody: encodedClientWrapper,
+                                              andMethod: .post,
+                                              completionHandler: { result in
+                                                switch result {
+                                                case let .success(data):
+                                                    completionHandler(.success(data))
+                                                case let .failure(error):
+                                                    completionHandler(.failure(error))
+                                                }
+        })
+    }
+    
     
     
     // MARK: - Private Properties and Initializers

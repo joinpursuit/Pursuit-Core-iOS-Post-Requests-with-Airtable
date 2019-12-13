@@ -4,7 +4,7 @@
 
 # Lab
 
-Using this project as your base, add the following two VCs.  Note: the project will not compile because it does not have a `Secrets.swift`.  Add one with your own secrets.
+Using this project as your base, add the following two VCs.  Note: the project will not compile because it does not have a `Secrets.swift`.  Add one with your own secrets (Project ID and API Key).  For a refresher on where to locate those, read section six at the lesson [here](https://github.com/joinpursuit/Pursuit-Core-iOS/blob/master/networking-concurrency-apis/post-requests/README.md)
 
 ## 1. Clients list
 

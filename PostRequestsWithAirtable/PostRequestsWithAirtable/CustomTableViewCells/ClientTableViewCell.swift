@@ -19,9 +19,13 @@ class ClientTableViewCell: UITableViewCell {
     }
     
     func setUpCell(using client: Client){
+        guard let url = client.fields.logo.first?.url else {
+            return
+        }
+        
         clientNameLabel.text = client.fields.name
-        clientKickOffTimeLabel.text = client.fields.kickOffDate.convertDateToString()
-        ClientAPI.manager.getImage(using: client.fields.logo.url) { [weak self] result in
+        clientKickOffTimeLabel.text = client.createdTime.convertDateToString()
+        ClientAPI.manager.getImage(using: url) { [weak self] result in
             switch result{
             case .failure:
                 break

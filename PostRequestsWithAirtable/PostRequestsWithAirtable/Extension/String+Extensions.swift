@@ -12,9 +12,8 @@ extension String {
     static func dateFormatter() -> ISO8601DateFormatter{
         let isoDateFormatter = ISO8601DateFormatter()
         isoDateFormatter.timeZone = .current
-        isoDateFormatter.formatOptions = [.withDashSeparatorInDate,
-        .withFullDate
-        ]
+        isoDateFormatter.formatOptions = [.withInternetDateTime,
+                                          .withFractionalSeconds]
         return isoDateFormatter
     }
     

@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ClientWrapper: Encodable{
+    var fields: PostClient
+}
+
 struct PostClient: Encodable{
     var name: String
     var about: String

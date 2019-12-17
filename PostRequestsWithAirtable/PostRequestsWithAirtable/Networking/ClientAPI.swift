@@ -16,7 +16,7 @@ struct ClientAPI {
     
     private var clientURL:URL {
         
-        guard let url = URL(string: "https://api.airtable.com/v0/\(Secrets.AirtableProject)/Clients?All%20clients&api_key=\(Secrets.AirtableAPIKey)&maxRecords=14") else {
+        guard let url = URL(string: "https://api.airtable.com/v0/\(Secrets.AirtableProject)/Clients?All%20clients&api_key=\(Secrets.AirtableAPIKey)&maxRecords=20") else {
             fatalError("Unable to create client URL")
         }
             return url
@@ -32,6 +32,7 @@ struct ClientAPI {
     static let manager = ClientAPI()
     
     func getClients(completion: @escaping (Result<[Client],AppError>) -> ()){
+        
         NetworkHelper.manager.performDataTask(withUrl: clientURL, andMethod: .get) { result in
             switch result{
             case .failure:
@@ -39,6 +40,7 @@ struct ClientAPI {
             case .success(let data):
                 do {
                     let clients = try JSONDecoder().decode(ClientResults.self, from: data)
+                    
                     completion(.success(clients.records))
                 } catch {
                     completion(.failure(.other(rawError: error)))
@@ -66,7 +68,7 @@ struct ClientAPI {
         }
     }
     
-    func postClients(client: PostClient, completion: @escaping (Result<Bool,AppError>) -> ()){
+    func postClients(client: ClientWrapper, completion: @escaping (Result<Bool,AppError>) -> ()){
         
         do{
             let encodedData = try JSONEncoder().encode(client)

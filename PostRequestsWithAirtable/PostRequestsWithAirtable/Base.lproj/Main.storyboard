@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suu-Hl-E79">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -181,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="1926.0869565217392" y="20.758928571428569"/>
         </scene>
-        <!--Client Controller-->
+        <!--Client List-->
         <scene sceneID="woR-IO-fE0">
             <objects>
                 <viewController id="KIR-21-jhx" customClass="ClientController" customModule="PostRequestsWithAirtable" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,8 +248,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9rg-Ot-Q4e"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jKZ-Pu-Zyz">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TX2-Mg-1dI"/>
+                    <navigationItem key="navigationItem" title="Client List" id="jKZ-Pu-Zyz">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="TX2-Mg-1dI">
+                            <connections>
+                                <segue destination="jYr-ta-N0d" kind="show" id="tJt-4Z-6Ci"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ctG-iE-TRr" id="pWU-F9-o8a"/>
@@ -259,6 +262,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9Z-LF-HrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2836.2318840579715" y="725.89285714285711"/>
+        </scene>
+        <!--Add a New Client-->
+        <scene sceneID="fTZ-Cl-iOV">
+            <objects>
+                <viewController id="jYr-ta-N0d" customClass="CreateClientViewController" customModule="PostRequestsWithAirtable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xlu-zS-sDS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-LG-cNz">
+                                <rect key="frame" x="8" y="108" width="45" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ybq-Xv-NUk">
+                                <rect key="frame" x="61" y="108" width="345" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J0b-WK-TAd">
+                                <rect key="frame" x="20" y="162" width="374" height="631"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ybq-Xv-NUk" firstAttribute="top" secondItem="Q7F-t4-9tq" secondAttribute="top" constant="20" id="96e-c6-Dsn"/>
+                            <constraint firstItem="Q7F-t4-9tq" firstAttribute="bottom" secondItem="J0b-WK-TAd" secondAttribute="bottom" constant="20" id="9Hi-e8-e0Z"/>
+                            <constraint firstItem="J0b-WK-TAd" firstAttribute="top" secondItem="Ybq-Xv-NUk" secondAttribute="bottom" constant="20" id="D7R-ly-PDn"/>
+                            <constraint firstItem="zd2-LG-cNz" firstAttribute="leading" secondItem="Q7F-t4-9tq" secondAttribute="leading" constant="8" id="Mfv-d6-Yoy"/>
+                            <constraint firstItem="Q7F-t4-9tq" firstAttribute="trailing" secondItem="J0b-WK-TAd" secondAttribute="trailing" constant="20" id="gSS-Xh-eHS"/>
+                            <constraint firstItem="Q7F-t4-9tq" firstAttribute="trailing" secondItem="Ybq-Xv-NUk" secondAttribute="trailing" constant="8" id="gWX-mg-HMH"/>
+                            <constraint firstItem="Ybq-Xv-NUk" firstAttribute="centerY" secondItem="zd2-LG-cNz" secondAttribute="centerY" id="hei-3n-QJg"/>
+                            <constraint firstItem="J0b-WK-TAd" firstAttribute="leading" secondItem="Q7F-t4-9tq" secondAttribute="leading" constant="20" id="qRX-NU-iUZ"/>
+                            <constraint firstItem="Ybq-Xv-NUk" firstAttribute="leading" secondItem="zd2-LG-cNz" secondAttribute="trailing" constant="8" id="wa3-90-nuD"/>
+                            <constraint firstItem="zd2-LG-cNz" firstAttribute="top" secondItem="Q7F-t4-9tq" secondAttribute="top" constant="20" id="wgD-H0-Nrn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q7F-t4-9tq"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add a New Client" id="o9y-D9-Hzi">
+                        <barButtonItem key="rightBarButtonItem" title="Add Client" id="KoB-Fr-ZBv">
+                            <connections>
+                                <action selector="createClientPressed:" destination="jYr-ta-N0d" id="GUP-eq-Sej"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="Ybq-Xv-NUk" id="5Zb-SX-5u0"/>
+                        <outlet property="textView" destination="J0b-WK-TAd" id="mrT-fp-f8a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1v-dQ-akz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3707" y="726"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fgF-2M-qNx">

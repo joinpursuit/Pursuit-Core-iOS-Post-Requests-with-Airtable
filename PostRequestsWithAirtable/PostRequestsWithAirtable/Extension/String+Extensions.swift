@@ -9,7 +9,17 @@
 import Foundation
 
 extension String {
-    static func dateFormatter() -> ISO8601DateFormatter{
+    
+    static func projectDateFormatter() -> ISO8601DateFormatter{
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.timeZone = .current
+        isoDateFormatter.formatOptions = [.withFullDate,
+                                          .withDashSeparatorInDate
+        ]
+        return isoDateFormatter
+    }
+    
+    static func clientDateFormatter() -> ISO8601DateFormatter{
         let isoDateFormatter = ISO8601DateFormatter()
         isoDateFormatter.timeZone = .current
         isoDateFormatter.formatOptions = [.withInternetDateTime,
@@ -18,19 +28,30 @@ extension String {
     }
     
     static func getTimestamp() -> String{
-        let timeStamp = String.dateFormatter().string(from: Date())
+        let timeStamp = String.clientDateFormatter().string(from: Date())
         return timeStamp
     }
     
     func convertStringToDate() -> Date {
-        guard let date = String.dateFormatter().date(from: self) else {
+        guard let date = String.clientDateFormatter().date(from: self) else {
             return Date()
         }
         return date
     }
     
-    func convertDateToString() -> String{
-        guard let string = String.dateFormatter().date(from: self) else {
+    func convertClientDateToString() -> String{
+        guard let string = String.clientDateFormatter().date(from: self) else {
+            return self
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        let returnDate = dateFormatter.string(from: string)
+        return returnDate
+    }
+    
+    func convertProjectDateToString() -> String{
+        guard let string = String.projectDateFormatter().date(from: self) else {
             return self
         }
         

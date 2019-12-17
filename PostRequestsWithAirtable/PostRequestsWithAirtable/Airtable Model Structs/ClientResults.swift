@@ -21,7 +21,7 @@ struct Client: Decodable{
 struct Fields: Decodable{
     let about: String
     let name: String
-    let logo: [CompanyLogo]
+    let logo: [CompanyLogo]?
     
     enum CodingKeys: String, CodingKey {
         case about = "About"

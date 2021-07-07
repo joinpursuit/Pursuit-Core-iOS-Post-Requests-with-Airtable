@@ -63,7 +63,7 @@ extension ProjectsViewController: UITableViewDataSource {
         let project = projects[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath)
         cell.textLabel?.text = project.name
-        cell.detailTextLabel?.text = project.dueDate.description
+        cell.detailTextLabel?.text = project.dueDate?.description
         return cell
     }
 }

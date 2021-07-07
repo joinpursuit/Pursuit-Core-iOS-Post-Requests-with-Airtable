@@ -56,3 +56,64 @@ struct ProjectAPIClient {
     
     private init() {}
 }
+
+
+struct ClientsAPIClient {
+    
+    // MARK: - Static Properties
+    
+    static let manager = ClientsAPIClient()
+    
+    // MARK: - Internal Methods
+    
+    func getClients(completionHandler: @escaping (Result<[Clients], AppError>) -> Void) {
+        NetworkHelper.manager.performDataTask(withUrl: airtableURL, andMethod: .get) { result in
+            switch result {
+            case let .failure(error):
+                completionHandler(.failure(error))
+                return
+            case let .success(data):
+                do {
+                    let projects = try ClientWrapper.getClients(from: data)
+                    completionHandler(.success(projects))
+                }
+                catch {
+                    completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+                }
+            }
+        }
+    }
+    
+    func post(_ client: Clients , completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+        guard let encodedClientWrapper = try? JSONEncoder().encode(client) else {
+            fatalError("Unable to json encode project")
+        }
+        print(String(data: encodedClientWrapper, encoding: .utf8)!)
+        NetworkHelper.manager.performDataTask(withUrl: airtableURL,
+                                              andHTTPBody: encodedClientWrapper,
+                                              andMethod: .post,
+                                              completionHandler: { result in
+                                                switch result {
+                                                case let .success(data):
+                                                    completionHandler(.success(data))
+                                                case let .failure(error):
+                                                    completionHandler(.failure(error))
+                                                }
+        })
+    }
+    
+    
+    
+    // MARK: - Private Properties and Initializers
+    
+    private var airtableURL: URL {
+        guard let url = URL(string: "https://api.airtable.com/v0/" + Secrets.AirtableProject + "/Clients?view=All%20clients&api_key=" + Secrets.AirtableAPIKey)
+        else {
+            fatalError("Error: Invalid URL")
+        }
+        return url
+    }
+    
+    private init() {}
+    
+}

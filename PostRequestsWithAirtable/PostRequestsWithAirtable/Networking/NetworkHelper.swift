@@ -12,6 +12,40 @@ class NetworkHelper {
     static let manager = NetworkHelper()
     
     // MARK: - Internal Properties
+    func fetchData(urlString: String,  completionHandler: @escaping (Result<Data,AppError>) -> ()) {
+        guard let url = URL(string: urlString) else {
+            completionHandler(.failure(.badURL))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                completionHandler(.failure(.noInternetConnection))
+                return
+            }
+            
+            guard let data = data else {
+                completionHandler(.failure(.noDataReceived))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completionHandler(.failure(.badStatusCode))
+                return
+            }
+            
+            switch response.statusCode {
+            case 404:
+                completionHandler(.failure(.badStatusCode))
+            case 401,403:
+                completionHandler(.failure(.badStatusCode))
+            case 200...299:
+                completionHandler(.success(data))
+            default:
+                completionHandler(.failure(.badStatusCode))
+            }
+            }.resume()
+    }
     
     func performDataTask(withUrl url: URL,
                          andHTTPBody body: Data? = nil,
